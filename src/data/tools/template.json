@@ -1,0 +1,23 @@
+{
+  "name": "template",
+  "slug": "template",
+  "category": "other",
+  "tags": [],
+  "label": "template",
+  "commands": [
+    {
+      "name": "command",
+      "description": "description",
+      "value": "rm{{#var}} -rf {{var}} {{/var}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "var",
+      "default": null,
+      "required": false,
+      "description": "test var"
+    }
+  ],
+  "description": [["p", "", "Just a sample description"]]
+}
