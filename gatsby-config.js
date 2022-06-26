@@ -1,7 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Docker oneliners`,
+    title: `Docker oneliners · dokr.one`,
     siteUrl: `https://dokr.one`,
+    titleTemplate: "%s · dokr.one",
+    description:
+      "Docker oneliners to quickly start tools and services. You don't need to install postgres database, redis or wordpress locally",
+    url: "https://dokr.one",
+    image: "/ogimage.png",
   },
   plugins: [
     "gatsby-plugin-preact",

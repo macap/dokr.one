@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import * as React from "react";
 import Layout from "../components/Layout";
 import Search from "../components/Search";
+import SEO from "../components/seo";
 
 const Jumbotron = ({ data }) => (
   <div className="bg-white dark:bg-gray-800 mb-20 ">
@@ -56,6 +57,7 @@ const buildCategoryTree = (data) =>
 const IndexPage = ({ data }) => {
   return (
     <Layout>
+      <SEO />
       <div className="max-w-screen-xl mx-auto p-8">
         <Jumbotron data={data.allToolsJson.nodes} />
         <h3 className="text-center mb-6 mt-10 text-lg font-medium text-gray-400 uppercase">

@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React, { useState } from "react";
 import Layout from "../components/Layout";
+import SEO from "../components/seo";
 import { commandCompiler } from "../lib/commandCompiler";
 
 const Tools = ({ data }) => {
@@ -14,6 +15,12 @@ const Tools = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title={`${tool.name} docker quickstart command`}
+        description={
+          tool.description && tool.description.length ? tool.description : null
+        }
+      />
       <div
         className="grid gap-8 sm:grid-cols-1 md:grid-cols-2"
         style={{ minHeight: "calc(100vh - 56px)" }}
