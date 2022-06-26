@@ -1,0 +1,62 @@
+{
+  "name": "postgres",
+  "slug": "postgres",
+  "category": "database",
+  "tags": ["db", "postgres"],
+  "label": "postgres",
+  "link": "https://hub.docker.com/_/postgres",
+  "commands": [
+    {
+      "name": "run and destroy",
+      "description": "Run just once and then destroy created containers",
+      "value": "docker run --rm --name {{container_name}} -p 5432:5432 -e POSTGRES_PASSWORD={{password}}{{#user}} -e POSTGRES_USER={{user}}{{/user}}{{#dbname}} -e POSTGRES_DB={{dbname}} {{/dbname}} -d postgres"
+    },
+    {
+      "name": "create",
+      "description": "",
+      "value": "docker run --name {{container_name}} -p 5432:5432 -e POSTGRES_PASSWORD={{password}}{{#user}} -e POSTGRES_USER={{user}}{{/user}}{{#dbname}} -e POSTGRES_DB={{dbname}} {{/dbname}} -d postgres"
+    },
+    {
+      "name": "start",
+      "description": "",
+      "value": "docker start {{container_name}}"
+    },
+    {
+      "name": "stop",
+      "description": "",
+      "value": "docker stop {{container_name}}"
+    },
+    {
+      "name": "remove",
+      "description": "",
+      "value": "docker rm {{container_name}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "container_name",
+      "default": "postgrestemp",
+      "required": true,
+      "description": "docker container name"
+    },
+    {
+      "name": "password",
+      "default": "mypassword",
+      "required": true,
+      "description": "db password"
+    },
+    {
+      "name": "user",
+      "default": null,
+      "required": false,
+      "description": "db default user"
+    },
+    {
+      "name": "dbname",
+      "default": null,
+      "required": false,
+      "description": "db default name"
+    }
+  ],
+  "description": ""
+}

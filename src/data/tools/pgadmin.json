@@ -1,0 +1,57 @@
+{
+  "name": "pgadmin",
+  "slug": "pgadmin",
+  "category": "database",
+  "tags": [],
+  "label": "pgadmin",
+  "link": "https://hub.docker.com/r/dpage/pgadmin4/",
+  "commands": [
+    {
+      "name": "create & run",
+      "description": "Run once to create a container and start it",
+      "value": "docker run --name {{name}} -p {{port}}:80 -e PGADMIN_DEFAULT_EMAIL={{login}} -e PGADMIN_DEFAULT_PASSWORD={{password}} -d dpage/pgadmin4"
+    },
+    {
+      "name": "start",
+      "description": "",
+      "value": "docker start {{name}}"
+    },
+    {
+      "name": "stop",
+      "description": "",
+      "value": "docker stop {{name}}"
+    },
+    {
+      "name": "remove",
+      "description": "",
+      "value": "docker rm {{name}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "name",
+      "default": "pgadmintemp",
+      "required": true,
+      "description": "Container name"
+    },
+    {
+      "name": "port",
+      "default": "8080",
+      "required": true,
+      "description": "Exposed port"
+    },
+    {
+      "name": "login",
+      "default": "admin@example.com",
+      "required": true,
+      "description": "Login"
+    },
+    {
+      "name": "password",
+      "default": "admin1234",
+      "required": true,
+      "description": "Password"
+    }
+  ],
+  "description": "Feature rich Open Source administration and development platform for PostgreSQL with web interface"
+}

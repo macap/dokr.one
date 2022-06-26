@@ -1,8 +1,8 @@
 {
-  "name": "docker-toolkit",
+  "name": "dokr.one",
   "version": "1.0.0",
   "private": true,
-  "description": "docker-toolkit",
+  "description": "dokr.one",
   "author": "Maciek Caputa",
   "keywords": [
     "gatsby"

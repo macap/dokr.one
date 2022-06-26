@@ -122,13 +122,13 @@ export const query = graphql`
         commands {
           name
           value
+          description
         }
         variables {
           name
           default
           required
           description
-          values
         }
         content {
           childMarkdownRemark {

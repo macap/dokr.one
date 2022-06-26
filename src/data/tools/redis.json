@@ -1,0 +1,45 @@
+{
+  "name": "redis",
+  "slug": "redis",
+  "category": "database",
+  "tags": [],
+  "label": "redis",
+  "link": "https://hub.docker.com/_/redis",
+  "commands": [
+    {
+      "name": "create",
+      "description": "creates the container",
+      "value": "docker create --name {{name}} -p {{port}}:6379 -d redis"
+    },
+    {
+      "name": "start",
+      "description": "",
+      "value": "docker start {{name}}"
+    },
+    {
+      "name": "stop",
+      "description": "",
+      "value": "docker stop {{name}}"
+    },
+    {
+      "name": "remove",
+      "description": "",
+      "value": "docker rm {{name}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "name",
+      "default": "redistemp",
+      "required": true,
+      "description": "Container name"
+    },
+    {
+      "name": "port",
+      "default": "6379",
+      "required": false,
+      "description": "Exposed port"
+    }
+  ],
+  "description": ""
+}

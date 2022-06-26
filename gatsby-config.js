@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Docker toolkit`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Docker oneliners`,
+    siteUrl: `https://dokr.one`,
   },
   plugins: [
     "gatsby-plugin-preact",

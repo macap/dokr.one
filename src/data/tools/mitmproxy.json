@@ -1,0 +1,37 @@
+{
+  "name": "mitmproxy",
+  "slug": "mitmproxy",
+  "category": "tools",
+  "tags": [],
+  "label": "mitmproxy",
+  "link": "https://mitmproxy.org/",
+  "commands": [
+    {
+      "name": "run once & destroy",
+      "description": "",
+      "value": "docker run --rm -it -p {{proxyport}}:8080 -p {{webport}}:8081 mitmproxy/mitmproxy mitmweb{{#host}} --web-host {{host}}{{/host}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "proxyport",
+      "default": "8080",
+      "required": true,
+      "description": "Exposed proxy port"
+    },
+    {
+      "name": "webport",
+      "default": "8081",
+      "required": true,
+      "description": "Exposed web server port"
+    },
+    {
+      "name": "host",
+      "default": "0.0.0.0",
+      "required": false,
+      "description": "Web server host"
+    }
+  ],
+  "description": "",
+  "content": "../content/mitmproxy.md"
+}

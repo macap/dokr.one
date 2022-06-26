@@ -1,0 +1,57 @@
+{
+  "name": "nginx-proxy-manager",
+  "slug": "nginx-proxy-manager",
+  "category": "tools",
+  "tags": [],
+  "label": "nginx-proxy-manager",
+  "link": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+  "description": "Provides easy web interface to manage reverse proxy",
+  "commands": [
+    {
+      "name": "command",
+      "description": "",
+      "value": "docker run --name {{name}}{{#exposedhttp}} -p {{exposedhttp}}:80{{/exposedhttp}} -p {{adminport}}:81{{#exposedhttps}} -p {{exposedhttps}}:443{{/exposedhttps}} -d jc21/nginx-proxy-manager:latest"
+    },
+    {
+      "name": "start",
+      "description": "",
+      "value": "docker start {{name}}"
+    },
+    {
+      "name": "stop",
+      "description": "",
+      "value": "docker stop {{name}}"
+    },
+    {
+      "name": "remove",
+      "description": "",
+      "value": "docker rm {{name}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "name",
+      "default": "nginxproxytemp",
+      "required": true,
+      "description": "Container name"
+    },
+    {
+      "name": "adminport",
+      "default": "81",
+      "required": false,
+      "description": "Web interface port"
+    },
+    {
+      "name": "exposedhttp",
+      "default": "80",
+      "required": false,
+      "description": "Exposed http port"
+    },
+    {
+      "name": "exposedhttps",
+      "default": "443",
+      "required": false,
+      "description": "Exposed https port"
+    }
+  ]
+}

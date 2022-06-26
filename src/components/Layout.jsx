@@ -4,15 +4,14 @@ const menuItems = [
   ["/", "Home"],
   ["/cheatsheet", "Docker cheatsheet"],
   ["/about", "About"],
-  ["/faq", "FAQ"],
-  ["#", "Contribute"],
+  // ["/faq", "FAQ"],
 ];
 
 const Navbar = () => (
   <div className="w-full flex flex-row items-center py-2 px-4 justify-between bg-white shadow-xs bg-sky-900">
     <div className="flex">
       <div className="text-md text-sky-500 flex py-2 uppercase font-medium">
-        Docker toolkit
+        docker oneliners
       </div>
       <div className="hidden md:block">
         <div className="ml-4 flex items-baseline space-x-4">
@@ -53,7 +52,9 @@ const Navbar = () => (
     </div>
     <div className="flex items-center hidden md:flex">
       <a
-        href="https://github.com/"
+        href="https://github.com/macap/dokr.one"
+        target="_blank"
+        rel="noopener noreferrer"
         className="p-1 rounded-full text-white focus:outline-none hover:text-gray-200 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
       >
         <span className="sr-only">View github</span>

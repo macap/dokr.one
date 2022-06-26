@@ -1,0 +1,45 @@
+{
+  "name": "drupal",
+  "slug": "drupal",
+  "category": "other",
+  "tags": ["cms"],
+  "label": "drupal",
+  "link": "https://hub.docker.com/_/drupal",
+  "commands": [
+    {
+      "name": "create",
+      "description": "",
+      "value": "docker create --name {{name}}{{#port}} -p {{port}}:80{{/port}} -d drupal"
+    },
+    {
+      "name": "start",
+      "description": "",
+      "value": "docker start {{name}}"
+    },
+    {
+      "name": "stop",
+      "description": "",
+      "value": "docker stop {{name}}"
+    },
+    {
+      "name": "remove",
+      "description": "",
+      "value": "docker rm {{name}}"
+    }
+  ],
+  "variables": [
+    {
+      "name": "name",
+      "default": "drupaltemp",
+      "required": true,
+      "description": "Container name"
+    },
+    {
+      "name": "port",
+      "default": "8080",
+      "required": false,
+      "description": "Exposed port"
+    }
+  ],
+  "description": "Open source CMS"
+}
