@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
 
   const template = path.resolve("./src/templates/tool.js");
@@ -19,5 +19,40 @@ exports.createPages = ({ actions }) => {
       component: template,
       context: { slug },
     });
+  });
+
+  const textPageTemplate = require.resolve(`./src/templates/text.js`);
+
+  await graphql(`
+    {
+      allFile(filter: { relativeDirectory: { eq: "text" } }) {
+        nodes {
+          id
+          name
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+    }
+  `).then((result) => {
+    if (result.errors) {
+      console.error(result.errors);
+      return Promise.reject(result.errors);
+    }
+
+    return result.data.allFile.nodes.forEach(
+      ({ id, name, childMarkdownRemark: { html } }) => {
+        createPage({
+          path: name,
+          component: textPageTemplate,
+          context: {
+            id,
+            name,
+            html,
+          },
+        });
+      }
+    );
   });
 };

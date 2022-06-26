@@ -28,9 +28,26 @@ const Tools = ({ data }) => {
                 </li>
               ))}
             </ul>
+            {tool.link ? (
+              <a
+                href={tool.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline	text-teal-500"
+              >
+                {tool.name} reference
+              </a>
+            ) : null}
           </div>
-          {tool.description.map(([tag, className, content]) =>
-            React.createElement(tag, { className }, content)
+          {tool.content ? (
+            <article
+              className="prose"
+              dangerouslySetInnerHTML={{
+                __html: tool.content.childMarkdownRemark.html,
+              }}
+            />
+          ) : (
+            <article>{tool.description}</article>
           )}
           <hr className="mt-4" />
           <div className="mt-4">
@@ -101,6 +118,7 @@ export const query = graphql`
         name
         slug
         tags
+        link
         commands {
           name
           value
@@ -111,6 +129,11 @@ export const query = graphql`
           required
           description
           values
+        }
+        content {
+          childMarkdownRemark {
+            html
+          }
         }
       }
     }

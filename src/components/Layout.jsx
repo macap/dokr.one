@@ -1,35 +1,29 @@
 import * as React from "react";
 
+const menuItems = [
+  ["/", "Home"],
+  ["/cheatsheet", "Docker cheatsheet"],
+  ["/about", "About"],
+  ["/faq", "FAQ"],
+  ["#", "Contribute"],
+];
+
 const Navbar = () => (
-  <div className="w-full flex flex-row items-center py-2 px-4 justify-between bg-white shadow-xs bg-indigo-500">
-    <div className="hidden md:flex">
-      <div className="text-md text-white flex py-2">Docker toolkit</div>
+  <div className="w-full flex flex-row items-center py-2 px-4 justify-between bg-white shadow-xs bg-sky-900">
+    <div className="flex">
+      <div className="text-md text-sky-500 flex py-2 uppercase font-medium">
+        Docker toolkit
+      </div>
       <div className="hidden md:block">
         <div className="ml-4 flex items-baseline space-x-4">
-          <a
-            className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
-            href="/"
-          >
-            Home
-          </a>
-          <a
-            className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
-            href="/about"
-          >
-            About
-          </a>
-          <a
-            className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
-            href="/faq"
-          >
-            FAQ
-          </a>
-          <a
-            className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md font-medium"
-            href="#"
-          >
-            Contribute
-          </a>
+          {menuItems.map(([url, label]) => (
+            <a
+              className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-md"
+              href={url}
+            >
+              {label}
+            </a>
+          ))}
         </div>
       </div>
     </div>

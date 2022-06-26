@@ -4,6 +4,7 @@
   "category": "other",
   "tags": [],
   "label": "template",
+  "link": "/template",
   "commands": [
     {
       "name": "command",
@@ -19,5 +20,6 @@
       "description": "test var"
     }
   ],
-  "description": [["p", "", "Just a sample description"]]
+  "description": "",
+  "content": "../content/template.md"
 }
