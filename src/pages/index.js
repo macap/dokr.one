@@ -7,7 +7,10 @@ import SEO from "../components/seo";
 const Jumbotron = ({ data }) => (
   <div className="bg-white dark:bg-gray-800 mb-20 ">
     <div className="text-center w-full mx-auto md:py-12 md:px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-      <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
+      <h1 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
+        Docker oneliners
+      </h1>
+      <h2 className="text-2xl mt-1">
         <span className="block">
           Spin up <span className="text-indigo-500">tool</span> with one line
         </span>
@@ -57,7 +60,7 @@ const buildCategoryTree = (data) =>
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO />
+      <SEO title="Docker oneliners to quickly run dockerized tools" />
       <div className="max-w-screen-xl mx-auto p-8">
         <Jumbotron data={data.allToolsJson.nodes} />
         <h3 className="text-center mb-6 mt-10 text-lg font-medium text-gray-400 uppercase">
