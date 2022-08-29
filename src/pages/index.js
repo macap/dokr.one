@@ -19,6 +19,7 @@ const Jumbotron = ({ data }) => (
         Use dockerized tools to avoid cluttering your system and wasting time on
         installation
       </p>
+
       <div className="mt-12 lg:flex-shrink-0">
         <div className="md:w-1/3 h-10 mx-auto">
           <Search data={data} />
@@ -67,6 +68,26 @@ const IndexPage = ({ data }) => {
           All tools
         </h3>
         <ToolsList data={buildCategoryTree(data.allToolsJson.nodes)} />
+        <h3 className="text-center mb-6 mt-10 text-lg font-medium text-gray-400 uppercase">
+          How it works?
+        </h3>
+        <p className="text-md mt-2 mx-auto text-gray-400 mb-6">
+          Docker oneliners will allow you to start a tool with just one command,
+          using prebuilt images, without needing to worry about dependencies,
+          package managers or cluttering your system.
+        </p>
+        <p className="text-md mt-2 mx-auto text-gray-400 mb-6">
+          You can also use it to quickly test a tool you consider using, and if
+          you are not happy, get rid of it with just one command line.
+        </p>
+        <p className="text-md mt-2 mx-auto text-gray-400 mb-6">
+          Each tool listed on this website provides a list of commands to
+          quickly get started, as well as inputs for additional parameters,
+          which allow you to set up your custom configuration. This is very
+          often used to change default port on which the tool is exposed or set
+          up environment variables easily. You don't need to remember variables
+          names for specific project anymore.
+        </p>
       </div>
     </Layout>
   );
