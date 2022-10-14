@@ -62,8 +62,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Docker oneliners to quickly run dockerized tools" />
+      <Jumbotron data={data.allToolsJson.nodes} />
       <div className="max-w-screen-xl mx-auto p-8">
-        <Jumbotron data={data.allToolsJson.nodes} />
         <h3 className="text-center mb-6 mt-10 text-lg font-medium text-gray-400 uppercase">
           All tools
         </h3>

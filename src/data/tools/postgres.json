@@ -30,6 +30,11 @@
       "name": "remove",
       "description": "",
       "value": "docker rm {{container_name}}"
+    },
+    {
+      "name": "run psql",
+      "description": "Opens PostgreSQL interactive terminal",
+      "value": "docker exec -it {{container_name}} psql{{#user}} -U {{user}}{{/user}}{{#dbname}} -d {{dbname}}{{/dbname}}"
     }
   ],
   "variables": [
@@ -58,5 +63,6 @@
       "description": "db default name"
     }
   ],
-  "description": ""
+  "description": "",
+  "content": "../content/postgres.md"
 }

@@ -56,8 +56,9 @@ const Tools = ({ data }) => {
           ) : (
             <article>{tool.description}</article>
           )}
-          <hr className="mt-4" />
-          <div className="mt-4">
+        </div>
+        <div className="bg-slate-200 p-4 h-full">
+          <div className="p-4 bg-slate-300">
             <h2 className="mb-2 font-bold">Parameters</h2>
             {tool.variables.map((v) => (
               <div className="mb-4">
@@ -94,8 +95,7 @@ const Tools = ({ data }) => {
               </div>
             ))}
           </div>
-        </div>
-        <div className="bg-slate-200 p-4 h-full">
+          <hr className="mt-4" />
           <h2 className="text-lg font-bold mb-4">Commands</h2>
           {tool.commands.map(({ name, value, description }) => (
             <div className="mb-4">
