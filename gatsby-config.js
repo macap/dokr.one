@@ -46,5 +46,15 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-plugin-umami`,
+      options: {
+        websiteId: "58a2a354-154b-4df1-a8d2-28eddf65783c",
+        srcUrl: "https://analytics.bieda.it/umami.js",
+        includeInDevelopment: false,
+        autoTrack: true,
+        respectDoNotTrack: true,
+      },
+    },
   ],
 };
