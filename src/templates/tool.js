@@ -16,7 +16,7 @@ const Tools = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={`${tool.name} docker quickstart command`}
+        title={`How to configure and run ${tool.name} in docker?`}
         description={
           tool.description && tool.description.length ? tool.description : null
         }
@@ -27,7 +27,10 @@ const Tools = ({ data }) => {
       >
         <div className="p-4">
           <div className="mb-4">
-            <h1 className="text-2xl font-bold">{tool.name}</h1>
+            <h1 className="text-2xl">
+              Running and configuring{" "}
+              <strong className="font-bold">{tool.name}</strong> in docker
+            </h1>
             <ul>
               {tool.tags.map((tag) => (
                 <li className="text-slate-600 inline-block mr-1 text-sm">
@@ -59,7 +62,7 @@ const Tools = ({ data }) => {
         </div>
         <div className="bg-slate-200 p-4 h-full">
           <div className="p-4 bg-slate-300">
-            <h2 className="mb-2 font-bold">Parameters</h2>
+            <h2 className="mb-2 font-bold">Accepted parameters</h2>
             {tool.variables.map((v) => (
               <div className="mb-4">
                 <label for={v.name} className="text-slate-600 block">
@@ -96,7 +99,7 @@ const Tools = ({ data }) => {
             ))}
           </div>
           <hr className="mt-4" />
-          <h2 className="text-lg font-bold mb-4">Commands</h2>
+          <h2 className="text-lg font-bold mb-4">Available commands</h2>
           {tool.commands.map(({ name, value, description }) => (
             <div className="mb-4">
               <div className="font-bold mb-1">{name}</div>

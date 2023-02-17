@@ -38,6 +38,6 @@
       "description": "Local path to persist certificates (e.g. /home/yourname/mitmproxy)"
     }
   ],
-  "description": "",
+  "description": "Cheatsheet how to start and configure mitmproxy in docker",
   "content": "../content/mitmproxy.md"
 }

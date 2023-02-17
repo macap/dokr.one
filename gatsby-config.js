@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Docker oneliners · dokr.one`,
+    title: `Docker oneliners · How to run X tool in docker · dokr.one`,
     siteUrl: `https://dokr.one`,
     titleTemplate: "%s · dokr.one",
     description:
-      "Docker oneliners to quickly start tools and services. You don't need to install postgres database, redis or wordpress locally",
+      "Easily configure and run tools in docker containers. You don't need to clutter your machine or know docker",
     url: "https://dokr.one",
     image: "/ogimage.png",
   },
