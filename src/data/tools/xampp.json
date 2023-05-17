@@ -1,0 +1,75 @@
+{
+  "name": "xampp",
+  "slug": "xampp",
+  "category": "development",
+  "tags": [],
+  "label": "xampp",
+  "link": "https://hub.docker.com/r/tomsik68/xampp",
+  "commands": [
+    {
+      "name": "run",
+      "description": "description",
+      "value": "docker run --name {{containername}}{{#exposedssh}} -p {{exposedssh}}:22 {{/exposedssh}}{{#exposedhttp}} -p {{exposedhttp}}:80 {{/exposedhttp}} -d -v {{dirname}}:/www {{version}}"
+    },
+    {
+      "name": "shell",
+      "description": "get a shell terminal inside your container",
+      "value": "docker exec -ti {{containername}} bash"
+    },
+    {
+      "name": "restart",
+      "description": "restart web server",
+      "value": "docker exec {{containername}} /opt/lampp/lampp restart"
+    },
+    {
+      "name": "XAMPP Interface",
+      "description": "visit this URL to open up XAMPP interface",
+      "value": "http://localhost:{{exposedhttp}}/"
+    },
+    {
+      "name": "Your webpage",
+      "description": "visit this URL to open up website you added in local directory",
+      "value": "http://localhost:{{exposedhttp}}/www"
+    },
+    {
+      "name": "phpMyAdmin",
+      "description": "visit this URL to open up phpmyadmin",
+      "value": "http://localhost:{{exposedhttp}}/phpmyadmin"
+    }
+  ],
+  "variables": [
+    {
+      "name": "version",
+      "default": "tomsik68/xampp:8",
+      "required": true,
+      "description": "PHP version (8.0.2, 7.3.7, 5.6.40)",
+      "values": ["tomsik68/xampp:8", "tomsik68/xampp:7", "tomsik68/xampp:5"]
+    },
+    {
+      "name": "dirname",
+      "default": "~/my_web_root",
+      "required": true,
+      "description": "Path to dir with webpage"
+    },
+    {
+      "name": "exposedssh",
+      "default": "41061",
+      "required": false,
+      "description": "Exposed ssh port"
+    },
+    {
+      "name": "exposedhttp",
+      "default": "41062",
+      "required": false,
+      "description": "Exposed http port"
+    },
+    {
+      "name": "containername",
+      "default": "myXampp",
+      "required": true,
+      "description": "docker container name"
+    }
+  ],
+  "description": "This image is intended for PHP+MySQL development. For convenience, it also runs SSH server to connect to. Both MySQL and phpmyadmin use default XAMPP password.",
+  "content": "../content/xampp.md"
+}

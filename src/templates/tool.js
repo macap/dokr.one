@@ -139,6 +139,7 @@ export const query = graphql`
           default
           required
           description
+          values
         }
         content {
           childMarkdownRemark {
